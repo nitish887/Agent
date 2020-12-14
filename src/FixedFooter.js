@@ -3,7 +3,7 @@ import React from 'react'
 export default function FixedFooter() {
     return (
         <React.Fragment>
-            <div class="footer_fixed">
+    <div class="footer_fixed">
     <div class="main_wrap">
         <ul class="action">
             <li class="bank"><p>Bank</p></li>

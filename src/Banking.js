@@ -54,8 +54,8 @@ export default function Banking() {
 				<td id="userExposure"></td>
 				<td class="DW-amount">
 					<ul class="btn_list-DW">
-						<li><a id="dBtn" class="btn" href="#">D</a></li>
-						<li><a id="wBtn" class="btn" href="#">W</a></li>
+						<li><a id="dBtn" class="btn" >D</a></li>
+						<li><a id="wBtn" class="btn" >W</a></li>
 					</ul>
 					<input id="amount" name="amount" class="" type="text" placeholder="0" maxlength="18"/>
 					<a id="fullBtn" href="javascript:void(0);" class="btn float-L disable">Full</a>
@@ -81,7 +81,7 @@ export default function Banking() {
 						<tr>
 							<th width="9%" class="align-L">Game</th>
 							<th width="11%">Balance</th>
-							<th width="7%"><a id="recallAll" href="#" class="btn-recall">Recall All</a></th>
+							<th width="7%"><a id="recallAll"  class="btn-recall">Recall All</a></th>
 							<th></th>
 						</tr>
 						</tbody>
@@ -91,7 +91,7 @@ export default function Banking() {
 			<tr id="tempVendorTr">
 				<td id="vendorTitle" class="align-L">Houise</td>
 				<td id="vendorBalance">200,000,000,000.00</td>
-				<td><a id="recall" href="#" class="btn-recall">Recall</a></td>
+				<td><a id="recall"  class="btn-recall">Recall</a></td>
 				<td></td>
 			</tr>
 			<tr id="noDataTempTr">
@@ -139,8 +139,8 @@ export default function Banking() {
 				<td id="userExposure">0.00</td>
 				<td class="DW-amount">
 					<ul class="btn_list-DW">
-						<li><a id="dBtn" class="btn" href="#">D</a></li>
-						<li><a id="wBtn" class="btn" href="#">W</a></li>
+						<li><a id="dBtn" class="btn" >D</a></li>
+						<li><a id="wBtn" class="btn" >W</a></li>
 					</ul>
 					<input id="amount" name="amount" class="" type="text" placeholder="0" maxlength="18"/>
 					<a id="fullBtn" href="javascript:void(0);" class="btn float-L disable">Full</a>

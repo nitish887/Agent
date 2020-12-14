@@ -1,6 +1,7 @@
 import React, { useState,useEffect} from 'react'
 import Transparent from './images/transparent.gif'
 import './Login.css'
+import "react-toastify/dist/ReactToastify.css";
 import BodyImage from './images/duoexch/bg-login-skyEX.jpg'
 import SupportLink from './SupportLink'
 import { suid } from 'rand-token';
@@ -14,7 +15,7 @@ var cc;
 var tt;
 toast.configure()
 
-export default function Login() {
+export default function Login(props) {
 	const [captchaSuccess, setCaptcha] = useState(false);
 	const [userid, setId] = useState("");
     const [password, setPassword] = useState("");
@@ -47,9 +48,7 @@ export default function Login() {
 		if(document.getElementById("popupcaptcha")){
 		  document.getElementById("popupcaptcha").appendChild(canv);
 		}
-		else{
-		  document.getElementById("captcha").appendChild(canv);
-		}
+		
 		
 		
 		
@@ -101,35 +100,33 @@ export default function Login() {
 		   }
 			
 		 
-		    var token = '94798';
-			tt = token;
 		 
 			var ssid = cookies.get('sid');
 			
 			
 			
 			
-			axios.post('http://13.233.238.117:3000/login',{
+			axios.post('http://65.0.111.203:3000/agentLogin',{
 			  id:userid,
-			  password:password,
-			  sid:ssid
+			  password:password
+			  
 			})
 			.then(result => {
 			   
    
 			   if(result.status === 200){
 				   
-				cookies.set('sid', result.data, { path: '/' });
-				   
-				 //setLoggedIn(true);
-				 //props.checkLogin(true);
+				 cookies.set('sid', result.data, { path: '/' });
+				 props.checkShowLogin(true); 
+				
 				 setCaptcha(false);
-				 //window.location.href = '/home';
-				 //window.location.reload();
+				 //window.location.href = '/';
+				 
 		 
 				
 			   }
 			   else{
+				 setCaptcha(false);  
 				 toast.warn('Username or password incorrect!', {position:toast.POSITION.TOP_CENTER})
 				 //document.getElementById("errorMsg").innerHTML="Username or password incorrect!";
 				 createCaptcha();
@@ -150,7 +147,7 @@ export default function Login() {
     return (
         <React.Fragment>
              <body style={{background: `url(${BodyImage}) no-repeat center`,
-    backgroundSize: 'cover'}}>
+    backgroundSize: 'cover',height:'69rem'}}>
             <div class="login-wrap-front">
 	<div class="kv"></div>
 
@@ -166,10 +163,10 @@ export default function Login() {
 		<dd><a id="loginBtn" onClick = {()=>{handleLogin()}} class="btn-send-front">Login
 			<img class="icon-login-front" src={Transparent}/></a></dd>
 		<dd id="errorMsg" class="error-front" style={{display:'none'}}> Invalid validation code!</dd>
-	</dl>
- </div>
-<SupportLink/>
-</body>
+	 </dl>
+    </div>
+   <SupportLink/>
+ </body>
         </React.Fragment>
     )
 }

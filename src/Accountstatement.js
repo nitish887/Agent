@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link} from "react-router-dom";
 
 export default function Accountstatement() {
     return (
@@ -69,12 +70,12 @@ export default function Accountstatement() {
     {/* <!-- Sub Menu --> */}
     <ul class="menu-list">
             <li class="class">Position</li>
-            <li><a id="accountStatement" href="#" class="select">Account Statement</a></li>
-            <li><a id="accountSummary" href="/agent/myAccount/accountSummary.jsp">Account Summary</a></li>
-            <li><a id="transferredLog" href="/agent/myAccount/transferredLog.jsp">Transferred Log</a></li>
+            <li><Link to="/myAccount/accountCashStatement" id="accountStatement" class="select">Account Statement</Link></li>
+            <li><Link to="/myAccount/accountSummary" id="accountSummary" >Account Summary</Link></li>
+            <li><Link to="/myAccount/transferredLog" id="transferredLog" >Transferred Log</Link></li>
             <li class="class">Account Details</li>
-            <li><a id="profile" href="/agent/myAccount/profile.jsp">Profile</a></li>
-            <li><a id="activityLog" href="/agent/myAccount/activityLog.jsp">Activity Log</a></li>
+            <li><Link to="/myAccount/profile" id="profile" >Profile</Link></li>
+            <li><Link to="/myAccount/activityLog" id="activityLog" >Activity Log</Link></li>
     </ul>
 </div>
 </div>

@@ -1,9 +1,62 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+import Cookies from 'universal-cookie';
+import axios from 'axios';
+
+const cookies = new Cookies();
 
 export default function TotalBox() {
+   const [RB,setRB] = useState(0);
+   const [TAB,setTAB] = useState(0);
+   const [TCB,setTCB] = useState(0);
+   const [CE,setCE] = useState(0);
+   const [AB,setAB] = useState(0);
+   const [LE,setLE] = useState(0);
+   
+
+    useEffect(()=>{
+
+      var ssid = cookies.get('sid');
+      if(!ssid) return;
+      axios.post('http://65.0.111.203:3000/agentDetailInfo',{
+			 sid:ssid
+			})
+			.then(result => {
+                if(result.status === 200){
+                   
+                   let b = result.data.balance ? result.data.balance : 0;
+                   let ld = result.data.ldb ? result.data.ldb : 0;
+                   let lw = result.data.lwc ? result.data.lwc : 0;
+                   let le = result.data.le ? result.data.le : 0;
+
+                   setRB(b);
+                   setTAB(ld);
+                   setTCB(lw);
+                   if(result.data.exposure){
+                     setCE(Math.abs(result.data.exposure));
+                   }
+                                    
+                   var avail_balance = parseFloat(b)+parseFloat(ld) + parseFloat(lw);
+                   setAB(avail_balance);
+                   setLE(le);
+                
+
+
+                }
+   	
+			   }
+			  	 
+		   ).catch(e => {
+			    //setIsError(true);
+		   });
+		   
+		
+     },[]);
+    
+
+
     return (
         <React.Fragment>
-            <div id="totalBox" class="total_box" >
+    <div id="totalBox" class="total_box" >
 
 <dl id="creditLimitDL" class="total_dl" style={{display:'none'}}>
     <dt>Credit Limit</dt>
@@ -18,12 +71,12 @@ export default function TotalBox() {
     <dd id="myCreditAvailBal">PTH 3,918.98</dd>
 </dl>
 <dl id="totalBalanceDL" class="total_dl" >
-    <dt>Total Balance</dt>
-    <dd id="totalBalance">PTH 47,124.96</dd>
+    <dt>Remaining Balance</dt>
+    <dd id="totalBalance">PTH {parseFloat(RB).toFixed(2)}</dd>
 </dl>
 <dl id="totalExposureDL" class="total_dl" >
-    <dt>Total Exposure</dt>
-    <dd id="totalExposure">PTH <span class="red">(50.00)</span></dd>
+    <dt>Total Agent Balance</dt>
+    <dd id="totalExposure">PTH {parseFloat(TAB).toFixed(2)}</dd>
 </dl>
 <dl id="myCurrentPLDL" class="total_dl" style={{display:'none'}}>
     <dt>Today P/L with Upline
@@ -31,28 +84,25 @@ export default function TotalBox() {
     <dd id="myCurrentPL">PTH 1,209.39</dd>
 </dl>
 <dl id="availableBalanceDL" class="total_dl" >
-    <dt>Total Avail. bal.</dt>
-    <dd id="totalAvailBal">PTH 47,074.96</dd>
+    <dt>Total Client Balance</dt>
+    <dd id="totalAvailBal">PTH {parseFloat(TCB).toFixed(2)}</dd>
 </dl>
 <dl id="masterBalanceDL" class="total_dl" >
-    <dt>Balance</dt>
-    <dd id="mastersBalance">PTH 4,401.98</dd>
+    <dt>Client Exposure</dt>
+    <dd id="mastersBalance">PTH <span class="red">({parseFloat(CE).toFixed(2)})</span></dd>
 </dl>
 <dl id="masterAvailableBalanceDL" class="total_dl" >
     <dt>Available Balance</dt>
-    <dd id="mastersAvailBal">PTH 51,476.94</dd>
+    <dd id="mastersAvailBal">PTH {parseFloat(AB).toFixed(2)}</dd>
 </dl>
 <dl id="transferablePLWithUplineDL" class="total_dl" >
-    <dt>Transferable P/L with Upline
+    <dt>Ledger Exposure
     </dt>
-    <dd id="transferablePLWithUpline">PTH <span class="red">(86,422.09)</span></dd>
+    <dd id="transferablePLWithUpline">PTH <span className={`${(LE >= 0) ? "green": "red"}`}>{LE >= 0 ? parseFloat(Math.abs(LE)).toFixed(2): '('+parseFloat(Math.abs(LE)).toFixed(2)+')' }</span></dd>
 </dl>
-
-
-
 
 
 </div>
-        </React.Fragment>
+    </React.Fragment>
     )
 }

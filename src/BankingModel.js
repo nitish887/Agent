@@ -19,13 +19,13 @@ export default function BankingModel() {
 			</ul>
 		</div>
 	</div>
-    <a class="close_pop" href="/#" onclick="BankingHandler.hideDialog()">close_pop</a>
+    <a class="close_pop"  onclick="BankingHandler.hideDialog()">close_pop</a>
 
     <h3>Edit Credit</h3>
     <ul class="tab col2">
-      <li><a id="deposit" href="/#">Credit IN
+      <li><a id="deposit" >Credit IN
       </a></li>
-      <li><a id="withdraw" href="/#">Credit OUT</a></li>
+      <li><a id="withdraw" >Credit OUT</a></li>
     </ul>
     <div class="total_box">
       <dl class="total_dl">
@@ -67,7 +67,7 @@ export default function BankingModel() {
       <dd>
         <textarea id="remarks" type="text" cols="45" rows="5" placeholder="Enter"></textarea>
       </dd>
-      <dd><a id="bankingBtn" class="btn-send" href="/#"></a></dd>
+      <dd><a id="bankingBtn" class="btn-send" ></a></dd>
     </dl>
 
   </div>

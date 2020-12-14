@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link} from "react-router-dom";
 
 export default function Profile() {
     return (
@@ -69,24 +70,13 @@ export default function Profile() {
         {/* <!-- Sub Menu --> */}
         <ul class="menu-list">
             
-	            <li class="class">Position</li>
-	            
-	            
-	               <li><a id="accountStatement" href="/agent/myAccount/accountCashStatement.jsp">Account Statement</a></li>
-	            
-	            
-	            <li><a id="accountSummary" href="/agent/myAccount/accountSummary.jsp">Account Summary</a></li>
-	            
-	            
-		            
-		              <li><a id="transferredLog" href="/agent/myAccount/transferredLog.jsp">Transferred Log</a></li>
-		            
-	            
-	            
-	            <li class="class">Account Details</li>
-	            <li><a id="profile" href="#" class="select">Profile</a></li>
-	            <li><a id="activityLog" href="/agent/myAccount/activityLog.jsp">Activity Log</a></li>
-	            
+        <li class="class">Position</li>
+            <li><Link to="/myAccount/accountCashStatement" id="accountStatement" >Account Statement</Link></li>
+            <li><Link to="/myAccount/accountSummary" id="accountSummary" >Account Summary</Link></li>
+            <li><Link to="/myAccount/transferredLog" id="transferredLog" >Transferred Log</Link></li>
+            <li class="class">Account Details</li>
+            <li><Link to="/myAccount/profile" id="profile" class="select">Profile</Link></li>
+            <li><Link to="/myAccount/activityLog" id="activityLog" >Activity Log</Link></li>
             
         </ul>
     </div>
@@ -133,7 +123,7 @@ export default function Profile() {
 
                     <dt>Password</dt>
                     <dd>********************************
-                        <a href="#" class="favor-set" onclick="ChangePasswordHandler.showDialog()">Edit</a>
+                        <a  class="favor-set" onclick="ChangePasswordHandler.showDialog()">Edit</a>
                     </dd>
 
                     <dt>Time Zone</dt>

@@ -1,88 +1,162 @@
 import React, { useState,useEffect } from 'react'
 import LoginAgent from './Login'
-import Addmember from './Addmember';
-import AddSuper from './AddSuper';
-import BankingModel from './BankingModel';
-import ChangeStatus from './ChangeStatus';
-import CreditRef from './CreditRef';
-import Dashboard from './Dashboard';
-import FixedFooter from './FixedFooter';
 import Header from './Header';
-import Marqueebox from './Marqueebox';
-import TotalBox from './TotalBox';
 import {toast} from 'react-toastify'
+import Cookies from 'universal-cookie';
+import axios from 'axios';
+import Agents from './Agents';
+import Accountstatement from './Accountstatement';
+import BetList from "./BetList";
+import Downline from "./Downline";
+import Market from "./Market";
+import BetListLive from "./BetlistLive";
+import RiskManagement from "./RiskManagement";
+import Banking from "./Banking";
+import MyAccount from './MyAccount';
+import Profile from './Profile'
+import Transfrredlog from './Transfrredlog'
+import ActivityLog from './ActivityLog'
 
 
-var tt;
 toast.configure()
+
+const cookies = new Cookies();
 
   
 export default function Combine(props) {
 
-  var eventId = null;
-  var marketId = null;
-  var eventT = 3;
-  if(props.match.params.eventT === '4' || props.match.params.eventT === '1' || props.match.params.eventT === '2'){
-    eventId = props.match.params.eventId;
-    marketId = props.match.params.marketId;
-    eventT = 0;
-   }
-   if(props.match.params.eventType === 'sports'){
+  
+   var eventT = 1;
+  
+  if(props.match.params.eventType === 'agents'){
     eventT = 1;
    }
-   else if(props.match.params.eventType === 'inplay'){
+   else if(props.match.params.eventType === 'myAccount' && props.match.params.subType === 'accountCashStatement'){
+    eventT = 9;
+   }
+   else if(props.match.params.eventType === 'myAccount' && props.match.params.subType === 'accountSummary'){
     eventT = 2;
    }
-   else if(props.match.params.eventType === 'home'){
+   else if(props.match.params.eventType === 'myAccount' && props.match.params.subType === 'transferredLog'){
+    eventT = 10;
+   }
+   else if(props.match.params.eventType === 'myAccount' && props.match.params.subType === 'profile'){
+    eventT = 11;
+   }
+   else if(props.match.params.eventType === 'myAccount' && props.match.params.subType === 'activityLog'){
+    eventT = 12;
+   }
+   else if(props.match.params.eventType === 'myAccount'){
+    eventT = 2;
+   }
+   else if(props.match.params.eventType === 'downLineProfitLoss'){
      eventT = 3;
    }
-   else if(props.match.params.eventType === 'multimarket'){
+   else if(props.match.params.eventType === 'marketProfitLoss'){
      eventT = 4;
    }
-   else if(props.match.params.eventType === 'myaccount'){
+   else if(props.match.params.eventType === 'betList'){
      eventT = 5;
+   }
+   else if(props.match.params.eventType === 'betListLive'){
+    eventT = 6;
+   }
+   else if(props.match.params.eventType === 'riskManagement'){
+    eventT = 7;
+   }
+  else if(props.match.params.eventType === 'cashBanking'){
+    eventT = 8;
    }
 
 
    const [isLoggedIn, setLoggedIn] = useState(null);
-   const [Changestatus, setChangestatus] = useState(false);
-   const [AddMember, setAddMember] = useState(false);
-   const [Creditrefence, setCreditrefence] = useState(false)
+   const [tabMenu,setTabMenu] = useState(eventT);
+   const [user,setuser] = useState('');
+   const [balance,setbalance] = useState(0);
+   const [level,setlevel] = useState('');
+
+   
 
 
+   useEffect(()=>{
+
+		if(cookies.get('sid')){
+      setLoggedIn(true);
+      
+      var ssid = cookies.get('sid');
+      axios.post('http://65.0.111.203:3000/agentInfo',{
+			 sid:ssid
+			})
+			.then(result => {
+			   
+   
+			  if(result.status === 200){
+				   
+           setuser(result.data.id);
+           setbalance(result.data.balance);
+           if(result.data.level == 1){
+             setlevel('SA');
+           }
+           else if(result.data.level == 2){
+            setlevel('SS');
+           }
+          else if(result.data.level == 3){
+            setlevel('SM');
+           }
+          else if(result.data.level == 4){
+            setlevel('MA');
+           }
+				
+			   }
+			  else{
+          setLoggedIn(false);
+          cookies.remove('sid',  { path: '/' });
+				 
+			   }
+			 }
+			 
+		   ).catch(e => {
+			    //setIsError(true);
+		   });
+		   
+		  
+     }
+     else{
+       setLoggedIn(false);
+     }
+   },[]);
+    
+    
+  useEffect(()=>{
+    setTabMenu(eventT);
+    
+  },[eventT]);
+  
 
    const checkShowLogin = (bool)=>{
      setLoggedIn(bool);
    }
-   const HandlePopup = (val1,val2)=>{
-    if(val1 === 1){
-      setChangestatus(val2);
-    }
-    if(val1 === 2){
-      setAddMember(val2);
-    }
-    if(val1 === 3){
-      setCreditrefence(val2);
-    }
-   }
+   
 
    return (
     <React.Fragment>
-     {!isLoggedIn && <LoginAgent checkShowLogin={checkShowLogin}/>}
-     {isLoggedIn && Changestatus && <ChangeStatus HandlePopup={HandlePopup}/>}
-     {isLoggedIn && AddMember && <Addmember HandlePopup={HandlePopup}/>}
-     {isLoggedIn && Creditrefence && <CreditRef HandlePopup={HandlePopup}/>}
-     {isLoggedIn && <Header/>}
-     {isLoggedIn && <div id="mainWrap" class="main_wrap">
-          <Marqueebox/>
-          <AddSuper HandlePopup={HandlePopup}/>
-          <TotalBox/>
-          <Dashboard HandlePopup={HandlePopup}/>
-        </div>}
-    {isLoggedIn && <BankingModel/>}
-    {isLoggedIn && <FixedFooter/>}
-      
-      
+     {isLoggedIn === false && <LoginAgent checkShowLogin={checkShowLogin}/>}
+     {isLoggedIn && <Header tabMenu = {tabMenu} user = {user} balance = {balance} level = {level}/>}
+     {isLoggedIn && tabMenu === 1 && <Agents/>}
+     {isLoggedIn && tabMenu === 2 && <MyAccount/>}
+     {isLoggedIn && tabMenu === 3 && <Downline/>}
+     {isLoggedIn && tabMenu === 4 && <Market/>}
+     {isLoggedIn && tabMenu === 5 && <BetList/>}
+     {isLoggedIn && tabMenu === 6 && <BetListLive/>}
+     {isLoggedIn && tabMenu === 7 && <RiskManagement/>}
+     {isLoggedIn && tabMenu === 8 && <Banking/>}
+     {isLoggedIn && tabMenu === 9 && <Accountstatement/>}
+     {isLoggedIn && tabMenu === 10 && <Transfrredlog/>}
+     {isLoggedIn && tabMenu === 11 && <Profile/>}
+     {isLoggedIn && tabMenu === 12 && <ActivityLog/>}
+
+
+  
     </React.Fragment>
   )
 }

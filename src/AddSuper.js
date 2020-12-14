@@ -82,7 +82,7 @@ export default function AddSuper(props) {
 <a id="refresh" class="btn_replay"><img src={Transparent}/></a>
 
 
-<a class="add_member" href="#" onClick={()=>{props.HandlePopup(2,true)}}><img src={Transparent}/>Add Super</a>
+<a class="add_member"  onClick={()=>{props.HandlePopup(2,true)}}><img src={Transparent}/>Add Super</a>
 
 </div>
         </React.Fragment>

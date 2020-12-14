@@ -128,13 +128,13 @@ export default function Market() {
 </ul>
 
 <ul class="input-list">
-    <li><a id="today" href="#" class="btn">Just For Today</a></li>
-    <li><a id="yesterday" href="#" class="btn">From Yesterday</a></li>
-    <li style={{display:'none'}}><a id="last7days" href="#" class="btn">Last 7 days</a></li>
-    <li style={{display:'none'}}><a id="last30days" href="#" class="btn">Last 30 days</a></li>
-    <li style={{display:'none'}}><a id="last2months" href="#" class="btn">Last 2 Months</a></li>
-    <li style={{display:'none'}}><a id="last3months" href="#" class="btn">Last 3 Months</a></li>
-    <li><a id="getPL" href="#" class="btn-send">Get P &amp; L</a></li>
+    <li><a id="today"  class="btn">Just For Today</a></li>
+    <li><a id="yesterday"  class="btn">From Yesterday</a></li>
+    <li style={{display:'none'}}><a id="last7days"  class="btn">Last 7 days</a></li>
+    <li style={{display:'none'}}><a id="last30days"  class="btn">Last 30 days</a></li>
+    <li style={{display:'none'}}><a id="last2months"  class="btn">Last 2 Months</a></li>
+    <li style={{display:'none'}}><a id="last3months"  class="btn">Last 3 Months</a></li>
+    <li><a id="getPL"  class="btn-send">Get P &amp; L</a></li>
 </ul>
 </div>
 {/* <!-- No Report Message --> */}

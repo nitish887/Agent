@@ -26,17 +26,10 @@ function App() {
        <Switch>
         
         <Route exact path= '/' component={Combine}></Route>
-        <Route exact path= '/myaccount' component={MyAccount}></Route>
-        <Route exact path= '/Banking' component={Banking}></Route>
-        <Route exact path= '/Betlist' component={BetList}></Route>
-        <Route exact path= '/BetlistLive' component={BetlistLive}></Route>
-        <Route exact path= '/RiskManagement' component={RiskManagement}></Route>
-        <Route exact path= '/Downline' component={Downline}></Route>
-        <Route exact path= '/Market' component={Market}></Route>
-        <Route exact path= '/Accountstatement' component={Accountstatement}></Route>
-        <Route exact path= '/Profile' component={Profile}></Route>
-        <Route exact path= '/Transfrredlog' component={Transfrredlog}></Route>
-        <Route exact path= '/ActivityLog' component={ActivityLog}></Route>
+        <Route exact path='/:eventType' component={Combine}></Route>
+        <Route exact path='/:eventType/:subType' component={Combine}></Route>
+
+       
        </Switch>
      </Router>
    </React.Fragment>

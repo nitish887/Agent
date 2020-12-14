@@ -10,20 +10,20 @@ export default function SupportLink() {
 	<div id="supportWrap" class="support-wrap-front">
 		<div class="support-service-front">
 			
-			<a id="support_email" href="#" onMouseOver ={()=>{setSocialicon(0)}} className={`support-mail-front  ${(Socialicon===0 )? "open": "null"}`} ><img src={Transparent} title="Email"/></a>
+			<a id="support_email"  onMouseOver ={()=>{setSocialicon(0)}} className={`support-mail-front  ${(Socialicon===0 )? "open": "null"}`} ><img src={Transparent} title="Email"/></a>
 			
 			
-			<a id="support_whatsapp" href="#" onMouseOver ={()=>{setSocialicon(1)}} className={`support-whatsapp-front  ${(Socialicon===1 )? "open": "null"}`} ><img src={Transparent} title="WhatsApp"/></a>
+			<a id="support_whatsapp"  onMouseOver ={()=>{setSocialicon(1)}} className={`support-whatsapp-front  ${(Socialicon===1 )? "open": "null"}`} ><img src={Transparent} title="WhatsApp"/></a>
 			
 			
-			<a id="support_telegram" href="#" onMouseOver ={()=>{setSocialicon(2)}} className={`support-telegram-front  ${(Socialicon===2 )? "open": "null"}`} ><img src={Transparent} title="Telegram"/></a>
+			<a id="support_telegram"  onMouseOver ={()=>{setSocialicon(2)}} className={`support-telegram-front  ${(Socialicon===2 )? "open": "null"}`} ><img src={Transparent} title="Telegram"/></a>
 			
 			
 			
-			<a id="support_skype" href="#"  onMouseOver ={()=>{setSocialicon(3)}} className={`support-skype-front  ${(Socialicon===3 )? "open": "null"}`}><img src={Transparent} title="Skype"/></a>
+			<a id="support_skype"   onMouseOver ={()=>{setSocialicon(3)}} className={`support-skype-front  ${(Socialicon===3 )? "open": "null"}`}><img src={Transparent} title="Skype"/></a>
 			
 			
-			<a id="support_instagram" href="#" onMouseOver ={()=>{setSocialicon(4)}} className={`support-ig-front  ${(Socialicon===4 )? "open": "null"}`} ><img src={Transparent} title="Instagram"/></a>
+			<a id="support_instagram"  onMouseOver ={()=>{setSocialicon(4)}} className={`support-ig-front  ${(Socialicon===4 )? "open": "null"}`} ><img src={Transparent} title="Instagram"/></a>
 			
 		</div>
 		<div class="support-info-front">

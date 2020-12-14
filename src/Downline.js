@@ -64,19 +64,19 @@ export default function Downline() {
 			<li style={{display:'none'}}>(TimeZone:IST)</li>
 		</ul>
 		<ul class="input-list">
-			<li><a id="today" href="#" class="btn">Just For Today</a>
+			<li><a id="today"  class="btn">Just For Today</a>
 			</li>
-			<li><a id="yesterday" href="#" class="btn">From Yesterday</a>
+			<li><a id="yesterday"  class="btn">From Yesterday</a>
 			</li>
-			<li style={{display:'none'}}><a id="last7days" href="#" class="btn">Last 7 days</a>
+			<li style={{display:'none'}}><a id="last7days"  class="btn">Last 7 days</a>
 			</li>
-			<li style={{display:'none'}}><a id="last30days" href="#" class="btn">Last 30 days</a>
+			<li style={{display:'none'}}><a id="last30days"  class="btn">Last 30 days</a>
 			</li>
-			<li style={{display:'none'}}><a id="last2months" href="#" class="btn">Last 2 Months</a>
+			<li style={{display:'none'}}><a id="last2months"  class="btn">Last 2 Months</a>
 			</li>
-			<li style={{display:'none'}}><a id="last3months" href="#" class="btn">Last 3 Months</a>
+			<li style={{display:'none'}}><a id="last3months"  class="btn">Last 3 Months</a>
 			</li>
-			<li><a id="getPL" href="#" class="btn-send">Get P &amp; L</a>
+			<li><a id="getPL"  class="btn-send">Get P &amp; L</a>
 			</li>
 		</ul>
 	</div>
@@ -103,8 +103,8 @@ export default function Downline() {
 		<tbody>
 			<tr id="tempTr">
 				<td class="align-L">
-					<a id="_bySport" href="#" class="expand-close"></a>
-					<a id="_userName" class="ico_account" href="#"></a>
+					<a id="_bySport"  class="expand-close"></a>
+					<a id="_userName" class="ico_account" ></a>
 				</td>
 				<td id="_stake"></td>
 				<td id="_profitLoss"></td>
@@ -121,7 +121,7 @@ export default function Downline() {
 			</tr>
 			<tr id="subTempTr" class="expand">
 				<td class="align-L">
-					<a id="_sportName" class="ico_account" href="#"></a>
+					<a id="_sportName" class="ico_account" ></a>
 				</td>
 				<td id="sport_stake"></td>
 				<td id="sport_profitLoss"></td>
@@ -163,7 +163,7 @@ export default function Downline() {
 		<div id="treePath" class="agent_path">
 			<ul class="agent_path-L" id="userTree"></ul>
 		</div>
-		<div id="expandAllDiv" style={{display:'none'}}>	<a id="showDetail" href="#" class="btn_expand">Expand All</a>
+		<div id="expandAllDiv" style={{display:'none'}}>	<a id="showDetail"  class="btn_expand">Expand All</a>
 		</div>
 	</div>
 	{/* <!-- Report Table --> */}

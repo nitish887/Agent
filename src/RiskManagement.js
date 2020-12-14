@@ -52,8 +52,8 @@ export default function RiskManagement() {
     
             <h3>
                 <ul class="tab-topplay">
-                    <li id="top10MatchedAmountLi" class="select"><a href="#">Top 10 Matched Amount Player</a></li>
-                    <li id="top10ExposureLi"><a href="#">Top 10 Exposure Player</a></li>
+                    <li id="top10MatchedAmountLi" class="select"><a >Top 10 Matched Amount Player</a></li>
+                    <li id="top10ExposureLi"><a >Top 10 Exposure Player</a></li>
                 </ul>
             </h3>
     

@@ -5,7 +5,7 @@ export default function Addmember(props) {
         <React.Fragment>
             <div id="createModal" class="pop_bg" style={{display:'block'}}>
   <div class="pop_box ">
-    <a class="close_pop" href="#" onClick={()=>{props.HandlePopup(2,false)}}>close_pop</a>
+    <a class="close_pop"  onClick={()=>{props.HandlePopup(2,false)}}>close_pop</a>
 
     <h3>Add Master Agent
     </h3>
@@ -167,8 +167,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="allowOneMaxPT" type="text" onclick="location.href='#stake'" placeholder="Enter" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#" name="copy_one_up">up</a></li>
-                            <li><a class="down" href="#" name="copy_one_down">down</a></li>
+                            <li><a class="up"  name="copy_one_up">up</a></li>
+                            <li><a class="down"  name="copy_one_down">down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -302,8 +302,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="company_fancy_bet_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="company" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -314,8 +314,8 @@ export default function Addmember(props) {
                     <dd>
                         <input id="sss_fancy_bet_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="sss" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
                         <div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -326,8 +326,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="shareHolder_fancy_bet_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="shareHolder" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -349,8 +349,8 @@ export default function Addmember(props) {
                     <dd>
                         <input id="company_book_maker_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="company" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
                         <div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -361,8 +361,8 @@ export default function Addmember(props) {
                     <dd>
                         <input id="shareHolder_book_maker_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="shareHolder" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
                         <div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -377,7 +377,7 @@ export default function Addmember(props) {
 			<div id="sportsbookTennisSet" class="sports_set" style={{display:'none',height:'115px'}}>
                 <dl class="bg_head">
                     <dt>SportsBook</dt>
-                    <dd><a class="toggle_on" href="#" id="edit_allow_sportsbookTennis">ON</a></dd>
+                    <dd><a class="toggle_on"  id="edit_allow_sportsbookTennis">ON</a></dd>
                 </dl>
 
                 <dl class="">
@@ -385,8 +385,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="company_sportsbook_tennis_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="company" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -397,8 +397,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="shareHolder_sportsbook_tennis_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="shareHolder" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -413,7 +413,7 @@ export default function Addmember(props) {
             <div id="sportsbookPremiumCricketSet" class="sports_set" style={{display:'none'}}>
                 <dl class="bg_head">
                     <dt>SportsBook - Premium</dt>
-                    <dd><a class="toggle_on" href="#" id="edit_allow_sportsbookPremiumCricket">ON</a></dd>
+                    <dd><a class="toggle_on"  id="edit_allow_sportsbookPremiumCricket">ON</a></dd>
                 </dl>
 
                 <dl class="">
@@ -422,8 +422,8 @@ export default function Addmember(props) {
                     <dd>
                         <input id="company_sportsbookPremiumCricket_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="company" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
                         <div class="tips-popup" style={{display:'none'}}>
                             multiplier of 5
@@ -438,8 +438,8 @@ export default function Addmember(props) {
                     <dd>
                         <input id="shareHolder_sportsbookPremiumCricket_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="shareHolder" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
                         <div class="tips-popup" style={{display:'none'}}>
                             multiplier of 5
@@ -465,8 +465,8 @@ export default function Addmember(props) {
                     <dd>
                         <input id="company_financialBinary_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="company" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
                         <div class="tips-popup" style={{display:'none'}}>
                             multiplier of 5
@@ -481,8 +481,8 @@ export default function Addmember(props) {
                     <dd>
                         <input id="shareHolder_financialBinary_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="shareHolder" value="0"/>
                         <ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
                         <div class="tips-popup" style={{display:'none'}}>
                             multiplier of 5
@@ -500,7 +500,7 @@ export default function Addmember(props) {
                 <dl class="bg_head">
                     <dt>Casino Setting</dt>
                     <dd style={{display:'none'}}>
-                   		<a class="toggle_on" href="#" id="new_allow_casino">ON</a>
+                   		<a class="toggle_on"  id="new_allow_casino">ON</a>
                 	</dd>
                 </dl>
                 
@@ -511,8 +511,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="live_agent_casino_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="agent" data-categorytype="live" value="100"/>
 						<ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -521,8 +521,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="live_downline_casino_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="downline" data-categorytype="live" value="0"/>
 						<ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -538,8 +538,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="rng_agent_casino_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="agent" data-categorytype="rng" value="100"/>
 						<ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -548,8 +548,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="rng_downline_casino_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="downline" data-categorytype="rng" value="0"/>
 						<ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -565,8 +565,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="slot_agent_casino_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="agent" data-categorytype="slot" value="100"/>
 						<ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -575,8 +575,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="slot_downline_casino_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="downline" data-categorytype="slot" value="0"/>
 						<ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -592,8 +592,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="virtual_agent_casino_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="agent" data-categorytype="virtual" value="100"/>
 						<ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -602,8 +602,8 @@ export default function Addmember(props) {
                     <dd>
 						<input id="virtual_downline_casino_PT" type="text" onclick="location.href='#stake'" placeholder="Enter" data-type="downline" data-categorytype="virtual" value="0"/>
 						<ul class="odd-add">
-                            <li><a class="up" href="#">up</a></li>
-                            <li><a class="down" href="#">down</a></li>
+                            <li><a class="up" >up</a></li>
+                            <li><a class="down" >down</a></li>
                         </ul>
 						<div class="tips-popup" style={{display:'none'}}>multiplier of 5</div>
                     </dd>
@@ -619,7 +619,7 @@ export default function Addmember(props) {
       </li>
     </ul>
     <div class="btn_box">
-      <a href="#" id="createBtn" class="btn-send">Create</a>
+      <a  id="createBtn" class="btn-send">Create</a>
     </div>
   </div>
 </div>

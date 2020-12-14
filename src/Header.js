@@ -1,15 +1,24 @@
 import React from 'react'
 import Transparent from './images/transparent.gif'
+import { Link} from "react-router-dom";
+import Cookies from 'universal-cookie';
 
-export default function Header() {
+const cookies = new Cookies();
+
+export default function Header(props) {
+	
+
+	
+   
+
     return (
         <React.Fragment>
             <div class="top">
   <div class="header">
-    <h1><a href="/agent/index.jsp">SKYEXCHANGE</a></h1>
+    <h1><a href="">SKYEXCHANGE</a></h1>
 
     <ul class="account-wrap">
-	  <li><span>SS</span><strong>dublinhkd043</strong></li>
+	  <li><span>{props.level}</span><strong>{props.user}</strong></li>
 	  {/* <!-- single balance 加 no-multi --> */}
       <li class="main-wallet no-multi">
       	{/* <!-- 加open打開--> */}
@@ -17,7 +26,7 @@ export default function Header() {
       		<ul>
       			<li>
       				<span>Main</span>
-      				<strong id="mainBalance">PTH 4,401.98</strong>
+      				<strong id="mainBalance">PTH {parseFloat(props.balance).toFixed(2)}</strong>
       			</li>
       		</ul>
       		<p class="loading-bar" id="menuRefreshLoading" style={{display: 'none'}}>
@@ -41,20 +50,25 @@ export default function Header() {
   <div class="menu-wrap">
     <div class="main_wrap">
       <ul class="menu">
-	      <li><a id="menu_downline_list" class="select" href="">Downline List
-	      </a></li>
+	      <li><Link to="/agents" id="menu_downline_list" className={`${(props.tabMenu===1 )? "select": "null"}`} >Downline List
+	      </Link></li>
 	      
 	      <li>
-		      <a id="menu_my_account" class="" href="">My Account
-		      </a></li>
-	      <li><a id="menu_my_report" class="menu-drop" href="#">My Report
+		      <Link to="/myAccount/accountSummary" id="menu_my_account" className={`${(props.tabMenu===2 || props.tabMenu===9 || props.tabMenu===10 || props.tabMenu===11 || props.tabMenu===12)? "select": "null"}`}>My Account
+		      </Link>
+		  </li>
+
+	      <li>
+			  <a id="menu_my_report"  className={`${(props.tabMenu===3 || props.tabMenu===4)? "menu-drop select": "null"}`}>My Report
 	      </a>
 		      <ul>
 			      
-			      <li><a href="">Profit/Loss Report by Downline
-			      </a></li>
-			      <li><a href="">Profit/Loss Report by Market
-			      </a></li>
+			      <li><Link to="/downLineProfitLoss" >Profit/Loss Report by Downline
+			         </Link>
+				  </li>
+			      <li><Link to="/marketProfitLoss" >Profit/Loss Report by Market
+			        </Link>
+				  </li>
 			      
 			      
 			      
@@ -63,27 +77,27 @@ export default function Header() {
 	      
 	      
 	      
-	      <li><a id="menu_bet_list" class="" href="/agent/betList/betList.jsp">BetList
-	      </a></li>
+	      <li><Link to="/betList" id="menu_bet_list" className={`${(props.tabMenu===5)? "select": "null"}`} >BetList
+	      </Link></li>
 	      
 	      
-	      <li><a id="menu_bet_list_live" class="" href="/agent/betList/betListLive.jsp">BetListLive
-	      </a></li>
+	      <li><Link to="/betListLive" id="menu_bet_list_live" className={`${(props.tabMenu===6)? "select": "null"}`} >BetListLive
+	      </Link></li>
 	      
 	      
-	      <li><a id="menu_risk_management" class="" href="/agent/riskManagement/riskManagement.jsp">Risk Management
-	      </a></li>
+	      <li><Link to="/riskManagement" id="menu_risk_management" className={`${(props.tabMenu===7)? "select": "null"}`}>Risk Management
+	      </Link></li>
 	      
 	      
-	      <li><a id="menu_banking" class="" href="/agent/banking/cashBanking.jsp">Banking
-	      </a></li>
+	      <li><Link to="/cashBanking" id="menu_banking" className={`${(props.tabMenu===8)? "select": "null"}`}>Banking
+	      </Link></li>
 	      
 		  
-		  <li><a id="menu_dashboard" class="" href="#" onclick="MenuHandler.loginDashboard()">Dashboard
-		  </a></li>
+		 {/* <li><a id="menu_dashboard" class="">Dashboard
+		  </a></li>*/}
 		  
         <li class="logout">
-          <a id="logout">Logout<img src={Transparent}/></a>
+          <a onClick = {()=>{cookies.remove('sid',  { path: '/' });setTimeout(()=>{window.location.href = '/';},200);}} id="logout">Logout<img src={Transparent}/></a>
         </li>
         <li class="time_zone"><span>Time Zone :</span> GMT+5:30</li>
       </ul>

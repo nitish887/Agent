@@ -212,7 +212,7 @@ export default function BetlistLive() {
 
 
 
-<li><a style={{width:'60px'}} href="#" class="btn-send" id="betListLiveRefresh">Refresh</a></li>
+<li><a style={{width:'60px'}}  class="btn-send" id="betListLiveRefresh">Refresh</a></li>
 </ul>
     </div>
 
