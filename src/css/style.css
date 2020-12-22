@@ -333,9 +333,9 @@ p{
 }
 .table01 th,.table-s th,.table_one th{
     color:#243A48;
-    background-color:#E4E4E4;
+    background-color:#fff;
     border:1px solid #7E97A7;
-    border-width:1px 0 1px 0;
+    /* border-width:1px 0 1px 0; */
     padding:8px 10px
 }
 .table01 td,.table-s td,.table_one td{
@@ -696,7 +696,8 @@ table .btn,table .btn-send,table .marquee-pop .pages a,.marquee-pop .pages table
 .duoexch .header h1{
     width:158px;
     height:53px;
-    background:url(../images/duoexch/logo-duoexch.png) no-repeat
+    background:url(../images/duo-logo.gif) no-repeat;
+    background-size: contain;
 }
 /* .goexchange .header h1{
     width:106px;
@@ -6596,7 +6597,8 @@ th+.full-amount{
 }
 .match-wrap td{
     padding:4px 10px;
-    line-height:25px
+    line-height:25px;
+    border:1px solid #7E97A7
 }
 .match-wrap .border-t td{
     box-shadow:none
@@ -19681,5 +19683,6 @@ body.sportsexchlive{
         transform: translateX(-1293px);
     }
 }
+
 
 

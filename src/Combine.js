@@ -16,6 +16,8 @@ import MyAccount from './MyAccount';
 import Profile from './Profile'
 import Transfrredlog from './Transfrredlog'
 import ActivityLog from './ActivityLog'
+import RunningFullmarket from './RunningFullmarket';
+import Runningmarketanlysis from './Runningmarketanlysis';
 
 
 toast.configure()
@@ -67,8 +69,12 @@ export default function Combine(props) {
   else if(props.match.params.eventType === 'cashBanking'){
     eventT = 8;
    }
-
-
+   else if(props.match.params.eventType === 'RunningFullmarket'){
+    eventT = 13;
+   }
+   else if(props.match.params.eventType === 'Runningmarketanlysis'){
+    eventT = 14;
+   }
    const [isLoggedIn, setLoggedIn] = useState(null);
    const [tabMenu,setTabMenu] = useState(eventT);
    const [user,setuser] = useState('');
@@ -143,17 +149,19 @@ export default function Combine(props) {
      {isLoggedIn === false && <LoginAgent checkShowLogin={checkShowLogin}/>}
      {isLoggedIn && <Header tabMenu = {tabMenu} user = {user} balance = {balance} level = {level}/>}
      {isLoggedIn && tabMenu === 1 && <Agents/>}
-     {isLoggedIn && tabMenu === 2 && <MyAccount/>}
+     {isLoggedIn && tabMenu === 2 && <MyAccount user = {user}  level = {level}/>}
      {isLoggedIn && tabMenu === 3 && <Downline/>}
      {isLoggedIn && tabMenu === 4 && <Market/>}
      {isLoggedIn && tabMenu === 5 && <BetList/>}
      {isLoggedIn && tabMenu === 6 && <BetListLive/>}
      {isLoggedIn && tabMenu === 7 && <RiskManagement/>}
-     {isLoggedIn && tabMenu === 8 && <Banking/>}
-     {isLoggedIn && tabMenu === 9 && <Accountstatement/>}
-     {isLoggedIn && tabMenu === 10 && <Transfrredlog/>}
-     {isLoggedIn && tabMenu === 11 && <Profile/>}
-     {isLoggedIn && tabMenu === 12 && <ActivityLog/>}
+     {isLoggedIn && tabMenu === 8 && <Banking balance={balance}/>}
+     {isLoggedIn && tabMenu === 9 && <Accountstatement user = {user}  level = {level}/>}
+     {isLoggedIn && tabMenu === 10 && <Transfrredlog user = {user}  level = {level}/>}
+     {isLoggedIn && tabMenu === 11 && <Profile user = {user}  level = {level}/>}
+     {isLoggedIn && tabMenu === 12 && <ActivityLog user = {user}  level = {level}/>}
+     {isLoggedIn && tabMenu === 13 && <RunningFullmarket/>}
+     {isLoggedIn && tabMenu === 14 && <Runningmarketanlysis/>}
 
 
   
