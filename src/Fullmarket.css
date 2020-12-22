@@ -1960,13 +1960,13 @@
     height: 650px
   }
   
-  .col-left {
+  /* .col-left {
     position: absolute;
     left: 0;
     top: 0;
     width: 17.36111%
   }
-  
+   */
   .full-wrap .col-left {
     height: 100%;
     overflow: hidden
@@ -2737,7 +2737,7 @@
     text-overflow: ellipsis;
     white-space: nowrap
   }
-  
+/*   
   .pop-warp,
   .log-wrap,
   .streaming-pop,
@@ -2760,7 +2760,7 @@
   .filter-pop,
   .calendarPanel {
     box-shadow: 0 4px 5px rgba(0, 0, 0, .5)
-  }
+  } */
   
   .slip-head,
   .matched-head,
@@ -5043,13 +5043,13 @@
   .favor-wrap .menu-list a.btn-star:hover {
     background-color: transparent
   }
-  
+/*   
   .favor-set {
     line-height: 25px;
     border-bottom-width: 0;
     padding-right: 23px;
     background-position: 100% -775px
-  }
+  } */
   
   .sub_path {
     position: relative
@@ -5288,13 +5288,13 @@
   .slip-list.full-unmatched {
     height: calc(100% - 83px)
   }
-  
+/*   
   .full-amount {
     display: none;
     width: auto !important;
     top: 7px;
     right: 0
-  }
+  } */
   
   .full_btn {
     border-top: 1px solid #e0e6e6
@@ -5403,7 +5403,7 @@
     height: 9px;
     width: 12px
   }
-  
+/*   
   .tips-popup,
   .full-amount {
     position: absolute;
@@ -5415,7 +5415,7 @@
     padding: 3px 5px;
     z-index: 50
   }
-  
+   */
   .stake-popup {
     display: none;
     position: absolute;
@@ -20456,7 +20456,7 @@
     margin-bottom: 18px
   }
   
-  .pop_box .btn,
+  /* .pop_box .btn,
   .pop_box .btn-send,
   .pop_box .pages a,
   .pages .pop_box a,
@@ -20467,7 +20467,7 @@
     width: 55%;
     margin: 15px 0 0
   }
-  
+   */
   .close_pop {
     position: absolute;
     right: 15px;
@@ -28672,45 +28672,3 @@
                             font-weight: bold;
                             vertical-align: top;
                         }
-
-
-                        @media (min-width: 1200px){
-                        .over-wrap {
-                        width: 1170px;
-                        }                    }
-
-
-                        .over-wrap {
-                        
-                          margin-right: auto;
-                          margin-left: auto;
-                      }
-                      @media (min-width: 992px){
-.over-wrap {
-    width: 970px;
-}
-}
-@media (min-width: 768px){
-.over-wrap {
-    width: 750px;
-}
-}
-
-@media screen and (max-width: 40em){
-body, .over-wrap {
-    height: auto;
-    overflow: auto;
-}
-}
-
-@media (min-width: 768px){
-.over-wrap {
-    min-width:  750px;
-}
-}
-
-@media (max-width: 540px){
-.bets th p, .bets-HS th p, .bets-GH th p{
-  width:auto
-}
-}

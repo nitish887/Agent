@@ -69,9 +69,6 @@ export default function Combine(props) {
   else if(props.match.params.eventType === 'cashBanking'){
     eventT = 8;
    }
-   else if(props.match.params.eventType === 'RunningFullmarket'){
-    eventT = 13;
-   }
    else if(props.match.params.eventType === 'Runningmarketanlysis'){
     eventT = 14;
    }
@@ -160,7 +157,6 @@ export default function Combine(props) {
      {isLoggedIn && tabMenu === 10 && <Transfrredlog user = {user}  level = {level}/>}
      {isLoggedIn && tabMenu === 11 && <Profile user = {user}  level = {level}/>}
      {isLoggedIn && tabMenu === 12 && <ActivityLog user = {user}  level = {level}/>}
-     {isLoggedIn && tabMenu === 13 && <RunningFullmarket/>}
      {isLoggedIn && tabMenu === 14 && <Runningmarketanlysis/>}
 
 

@@ -7,7 +7,7 @@ export default function Runningmarketanlysis() {
             <div class="full-wrap">
 
 {/* <!-- Left Column --> */}
-<div class="col-left" style={{display:'block'}}>
+<div class="col-left" style={{display:'block', top:'0'}}>
 
     {/* <!-- Sub Menu and Path --> */}
 

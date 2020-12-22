@@ -4,31 +4,25 @@ import axios from 'axios';
 import { Link} from "react-router-dom";
 import Loading from './images/loading40.gif'
 import Transparent from './images/transparent.gif'
-
 import Pagination from './Pagination';
 
-
-
-
 const cookies = new Cookies();
-window.acountstatementView = 1;
+
 
 export default function Accountstatement(props) {
 
     const [accountStatement, setaccountStatement ] = useState([])
-    const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(1);
+    const [postsPerPage] = useState(2);
+    
 
     useEffect(() => {
         var ssid = cookies.get('sid');
         if(!ssid) return;
-        setLoading(true)
         axios.post('http://65.0.111.203:3000/myAccountStatement',{
             sid:ssid,
            }).then(result => {
             setaccountStatement(result.data)
-            setLoading(false)
             console.log(result.data); 
      }
    ).catch(e => {
@@ -44,7 +38,6 @@ export default function Accountstatement(props) {
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
- 
     return (
         <React.Fragment>
 <div class="main_wrap">

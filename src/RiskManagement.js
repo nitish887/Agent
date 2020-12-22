@@ -51,8 +51,8 @@ export default function RiskManagement() {
 			<td class="align-L" rowspan="1"  id="0_1"><a id="eventType" href="javascript:void(0);">Cricket</a></td>
 			<td class="align-L border-l" rowspan="1" id="1_1" >2020-12-19</td>
 			<td class="align-L border-l">
-				<a href="javascript:void(0);" class="btn open-odds" id="showOddsBtn"  name="oddsBtn_30180016">Open</a>
-				<Link to ='/RunningFullmarket' id="marketPath">
+				{/* <a href="javascript:void(0);" class="btn open-odds" id="showOddsBtn"  name="oddsBtn_30180016">Open</a> */}
+				<Link to ='/Runningmarketanlysis' id="marketPath">
 					<strong id="eventName">Australia v India</strong>
 					<img class="fromto" src={Transparent}/>
 					<span id="marketName">Match Odds</span>
@@ -98,7 +98,7 @@ export default function RiskManagement() {
 			<td class="align-L" rowspan="1"  id="0_1"><a id="eventType" href="javascript:void(0);">Cricket</a></td>
 			<td class="align-L border-l" rowspan="1" id="1_1" >2020-12-19</td>
 			<td class="align-L border-l">
-				<a href="javascript:void(0);" class="btn open-odds" id="showOddsBtn"  name="oddsBtn_30180016">Open</a>
+				{/* <a href="javascript:void(0);" class="btn open-odds" id="showOddsBtn"  name="oddsBtn_30180016">Open</a> */}
 				<Link to="/Runningmarketanlysis" href="javascript:void(0);" id="marketPath">
 					<strong id="eventName">Australia v India</strong>
 					<img class="fromto" src={Transparent}/>
@@ -145,7 +145,7 @@ export default function RiskManagement() {
 			<td class="align-L" rowspan="1"  id="0_1"><a id="eventType" href="javascript:void(0);">Cricket</a></td>
 			<td class="align-L border-l" rowspan="1" id="1_1" >2020-12-19</td>
 			<td class="align-L border-l">
-				<a href="javascript:void(0);" class="btn open-odds" id="showOddsBtn"  name="oddsBtn_30180016">Open</a>
+				{/* <a href="javascript:void(0);" class="btn open-odds" id="showOddsBtn"  name="oddsBtn_30180016">Open</a> */}
 				<a href="javascript:void(0);" id="marketPath">
 					<strong id="eventName">Australia v India</strong>
 					<img class="fromto" src={Transparent}/>

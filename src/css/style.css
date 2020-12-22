@@ -333,9 +333,9 @@ p{
 }
 .table01 th,.table-s th,.table_one th{
     color:#243A48;
-    background-color:#fff;
+    background-color:#E4E4E4;
     border:1px solid #7E97A7;
-    /* border-width:1px 0 1px 0; */
+    border-width:1px 0 1px 0;
     padding:8px 10px
 }
 .table01 td,.table-s td,.table_one td{
@@ -5258,13 +5258,12 @@ table .expand-close,table .expand-open{
 .add_member{
     height:30px;
     margin:0;
-    line-height:0px;
+    line-height:30px;
     padding:0 15px
 }
 .add_member img{
     margin-right:5px;
-    margin-top:5px;
-    background-position:-32px -30px;
+    background-position:-32px -32px;
     height:15px;
     width:26px
 }
@@ -6634,6 +6633,9 @@ th+.full-amount{
     position:relative;
     width:25px;
     margin-right:10px
+}
+.open-odds:before{
+    background-image: url('../images/right-arrow.png');
 }
 .open-odds:before,.close-odds:before{
     position:absolute;
